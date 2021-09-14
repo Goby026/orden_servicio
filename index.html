@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="./styles.css">
+
+    <title>Registro de atenciones 😎</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <div class="container-fluid sticky-top mb-3">
+        <div class="row shadow p-0 bg-body rounded">
+            <div class="col-md-12 col-sm-12 p-0">
+                <!-- As a heading -->
+                <nav class="navbar navbar-success bg-success">
+                    <div class="container-fluid">
+                        <span class="navbar-brand mb-0 h1 text-light">
+                            <h3>Orden de trabajo</h3>
+                        </span>
+                        <button class="btn btn-outline-light">Registrar</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- FORMULARIO -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 col-sm-12">
+                <form>
+                    <!-- FECHA -->
+                    <div class="mb-3">
+                        <label for="fecha" class="form-label">Fecha</label>
+                        <input type="date" class="form-control" id="fecha">
+                    </div>
+
+                    <!-- CLIENTE -->
+                    <div class="mb-3">
+                        <label for="cliente" class="form-label">Cliente</label>
+                        <input type="text" class="form-control" id="cliente">
+                    </div>
+
+                    <!-- EMAIL -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email">
+                    </div>
+
+                    <!-- TELEFONO -->
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Teléfono</label>
+                        <input type="tel" class="form-control" id="telefono">
+                    </div>
+
+                    <!-- DIRECCION -->
+                    <div class="mb-3">
+                        <label for="direccion" class="form-label">Dirección</label>
+                        <input type="text" class="form-control" id="direccion">
+                    </div>
+
+                    <!-- MODELO DEL EQUIPO -->
+                    <div class="mb-3">
+                        <label for="modelo" class="form-label">Modelo del equipo</label>
+                        <input type="text" class="form-control" id="modelo">
+                    </div>
+
+                    <!-- SERIE DEL EQUIPO -->
+                    <div class="mb-3">
+                        <label for="serie" class="form-label">Serie del equipo</label>
+                        <input type="text" class="form-control" id="serie">
+                    </div>
+
+                    <!-- PROBLEMA REPORTADO -->
+                    <div class="mb-3">
+                        <label for="problema" class="form-label">Problema reportado</label>
+                        <input type="text" class="form-control" id="problema">
+                    </div>
+
+                    <!-- CONTADOR -->
+                    <div class="mb-3">
+                        <label for="contador" class="form-label">Contador</label>
+                        <input type="text" class="form-control" id="contador">
+                    </div>
+
+                    <!-- REPONSABLE TECNICO -->
+                    <div class="mb-3">
+                        <label for="responsable" class="form-label">Responsable Técnico</label>
+                        <select class="form-select" id="responsable">
+                            <option selected>Seleccionar</option>
+                            <option value="1">David Jimenez</option>
+                            <option value="2">Kevin Romero</option>
+                            <option value="3">Grover Rendich</option>
+                        </select>
+                    </div>
+
+                    <!-- TRABAJO REALIZADO -->
+                    <div class="mb-3">
+                        <label for="trabajorealizado" class="form-label">Trabajo realizado</label>
+                        <div class="form-floating">
+                            <textarea class="form-control p-2" id="trabajorealizado" placeholder=""
+                                style="height: 100px"></textarea>
+                            <!-- <label for="floatingTextarea2"></label> -->
+                        </div>
+                    </div>
+
+                    <!-- HORAS -->
+                    <div class="mb-3">
+                        <label for="horas" class="form-label">Horas</label> <br>
+                        <div class="d-grid gap-2">
+                            <button type="button" id="horas" class="btn btn-outline-info" data-bs-toggle="modal"
+                                data-bs-target="#horasModel">
+                                Añadir horas de trabajo 🤖
+                            </button>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="horasModel" tabindex="-1" aria-labelledby="horasModelLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="horasModelLabel">Establecer Horas</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- HORA INICIO -->
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Hora Inicio &nbsp;</span>
+                                            <input type="time" class="form-control">
+                                        </div>
+                                        <!-- HORA FIN -->
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Hora Fin
+                                                &nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                            <input type="time" class="form-control">
+                                        </div>
+                                        <!-- DESCRIPCION -->
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Descripción</span>
+                                            <textarea class="form-control p-2" placeholder="" id="floatingTextarea2"
+                                                style="height: 100px"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="button" class="btn btn-primary">Confirmar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- REPUESTOS REQUERIDOS -->
+                    <div class="mb-3">
+                        <label for="repuestos" class="form-label">Respuestos</label> <br>
+                        <div class="d-grid gap-2">
+                            <!-- <button class="btn btn-primary" type="button">Button</button>
+                            <button class="btn btn-primary" type="button">Button</button> -->
+                            <button type="button" class="btn btn-outline-info btn-block" data-bs-toggle="modal"
+                                data-bs-target="#repuestosModal">
+                                Añadir Materiales 👾
+                            </button>
+                        </div>
+
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="repuestosModal" tabindex="-1" aria-labelledby="repuestosModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="repuestosModalLabel">Añadir material</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- COD REPUESTO -->
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Cod Repuesto
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <!-- NOMBRE REPUESTO -->
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Nombre Repuesto</span>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <!-- CANTIDAD -->
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text"
+                                                id="basic-addon1">Cantidad&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                            <input type="number" class="form-control">
+                                        </div>
+
+                                        <!-- REQUERIDO POR -->
+                                        <div class="input-group mb-3">
+                                            <label for="contador" class="form-label">Requerido
+                                                por:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                            <select class="form-select">
+                                                <option value="1">Garantía</option>
+                                                <option value="2">Cotización</option>
+                                                <option value="3">Descarte</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="button" class="btn btn-primary">Confirmar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button> -->
+
+                    <!-- RECOMENDACIONES -->
+                    <div class="mb-3">
+                        <label for="recomendaciones" class="form-label">Trabajo realizado</label>
+                        <div class="form-floating">
+                            <textarea class="form-control p-2" id="recomendaciones" placeholder=""
+                                id="floatingTextarea2" style="height: 100px"></textarea>
+                            <!-- <label for="floatingTextarea2"></label> -->
+                        </div>
+                    </div>
+
+                    <!-- FOTOS -->
+                    <div class="mb-3">
+                        <label for="fotos" class="form-label">Fotos</label> <br>
+                        <div class="d-grid gap-2">
+                            <!-- <button class="btn btn-primary" type="button">Button</button>
+                            <button class="btn btn-primary" type="button">Button</button> -->
+                            <button type="button" id="fotos" class="btn btn-outline-info btn-block"
+                                data-bs-toggle="modal" data-bs-target="#fotosModel">
+                                Añadir Fotos 👽
+                            </button>
+                        </div>
+
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="fotosModel" tabindex="-1" aria-labelledby="fotosModelLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="fotosModelLabel">Añadir Foto</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- COD REPUESTO -->
+                                        <div class="input-group mb-3">
+                                            <!-- <span class="input-group-text" id="basic-addon1">Foto
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> -->
+                                            <input class="form-control" type="file" id="formFile">
+                                        </div>
+
+                                        <!-- COMENTARIO -->
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text">Comentario</span>
+                                            <textarea class="form-control p-2" placeholder="" id="comentario"
+                                                style="height: 100px"></textarea>
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="button" class="btn btn-primary">Confirmar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- POZO A TIERRA -->
+                    <div class="mb-3">
+                        <div class="accordion" id="accordionPozo">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapsePozo" aria-expanded="true" aria-controls="collapseOne">
+                                        Pozo a tierra
+                                    </button>
+                                </h2>
+                                <div id="collapsePozo" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                                    data-bs-parent="#accordionPozo">
+                                    <div class="accordion-body">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="pozo" id="pozosi"
+                                                value="1">
+                                            <label class="form-check-label" for="pozosi">SI</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="pozo" id="pozono"
+                                                value="0">
+                                            <label class="form-check-label" for="pozono">NO</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- TONER ORIGINAL -->
+                    <div class="mb-3">
+                        <div class="accordion" id="accordionToner">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseToner" aria-expanded="true"
+                                        aria-controls="collapseOne">
+                                        Toner original
+                                    </button>
+                                </h2>
+                                <div id="collapseToner" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                                    data-bs-parent="#accordionToner">
+                                    <div class="accordion-body">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="toner" id="tonersi"
+                                                value="1">
+                                            <label class="form-check-label" for="tonersi">SI</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="toner" id="tonerno"
+                                                value="0">
+                                            <label class="form-check-label" for="tonerno">NO</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- ESTABILIZADOR / UPS -->
+                    <div class="mb-3">
+                        <div class="accordion" id="accordionUps">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseUps" aria-expanded="true" aria-controls="collapseOne">
+                                        Estabilizador / ups
+                                    </button>
+                                </h2>
+                                <div id="collapseUps" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                                    data-bs-parent="#accordionUps">
+                                    <div class="accordion-body">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="ups" id="upssi"
+                                                value="1">
+                                            <label class="form-check-label" for="upssi">SI</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" name="ups" id="upsno"
+                                                value="0">
+                                            <label class="form-check-label" for="upsno">NO</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TRABAJO COMPLETADO -->
+                    <div class="mb-3">
+                        <div class="accordion" id="accordionCompletado">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseCompletado" aria-expanded="true"
+                                        aria-controls="collapseOne">
+                                        Trabajo completado
+                                    </button>
+                                </h2>
+                                <div id="collapseCompletado" class="accordion-collapse collapse show"
+                                    aria-labelledby="headingOne" data-bs-parent="#accordionCompletado">
+                                    <div class="accordion-body">
+
+                                        <div class="row">
+                                            <div class="col text-center">
+                                                <input class="form-check-input" type="checkbox" name="completado"
+                                                    id="completadosi" value="1">
+                                                <label class="form-check-label" for="completadosi">SI</label>
+                                            </div>
+                                            <div class="col text-center">
+                                                <input class="form-check-input" type="checkbox" name="completado"
+                                                    id="completadono" value="0">
+                                                <label class="form-check-label" for="completadono">NO</label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FIRMA DEL CLIENTE -->
+                    <div class="mb-3">
+                        <label for="firma" class="form-label">Firma del cliente</label> <br>
+                        <div class="d-grid gap-2">
+                            <!-- <button class="btn btn-primary" type="button">Button</button>
+                            <button class="btn btn-primary" type="button">Button</button> -->
+                            <button type="button" class="btn btn-outline-info btn-block" data-bs-toggle="modal"
+                                data-bs-target="#firmaModal">
+                                Dibujar firma 🤺
+                            </button>
+                        </div>
+
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="firmaModal" tabindex="-1" aria-labelledby="firmaModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="firmaModalLabel">Firma</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <!-- DIBUJO -->
+                                        <!-- <textarea class="form-control p-2" placeholder="" id="comentario"
+                                            style="height: 400px"></textarea> -->
+                                        <canvas id="pizarra"></canvas>
+
+                                        <div id="image_for_crop"></div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="button" id="btnClean" class="btn btn-warning">Clean</button>
+                                        <button type="button" class="btn btn-primary">Confirmar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+
+    <!-- custom js -->
+    <script src="./app.js"></script>
+    <script src="./firma.js"></script>
+</body>
+
+</html>
