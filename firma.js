@@ -18,6 +18,11 @@ miCanvas.width = 500;
 miCanvas.height = 500;
 
 //======================================================================
+// BANDERA PARA CANVAS
+//======================================================================
+let canvasOn = false;
+
+//======================================================================
 // FUNCIONES
 //======================================================================
 
@@ -48,7 +53,7 @@ function dibujarLinea(event) {
     let ctx = miCanvas.getContext("2d");
     // Estilos de linea
     ctx.lineJoin = ctx.lineCap = "round";
-    ctx.lineWidth = 10;
+    ctx.lineWidth = 3;
     // Color de la linea
     ctx.strokeStyle = "#0D0909";
     // Marca el nuevo punto
@@ -83,17 +88,17 @@ function pararDibujar() {
   guardarLinea();
 }
 
-function clearCanvas() {
-  //   var canvas = document.getElementById("myCanvasID");
-  var context = miCanvas.getContext("2d");
-  context.clearRect(0, 0, miCanvas.width, miCanvas.height);
-  lineas.push([]);
-}
-
-// function clearHtmlCanvas() {
+// function clearCanvas() {
+//   // var canvas = document.getElementById("myCanvasID");
 //   var context = miCanvas.getContext("2d");
-//   context.clearRect(0, 0, miCanvas.width, miCanvas.height);
+//   context.clearRect(0, 0, miCanvas.width, miCanvas.height); //clear html5 canvas
+//   miCanvas.remove();
 // }
+
+function crearCanvas() {
+  const panelCanvasCliente = document.querySelector("#panel-canvas-cliente");
+  panelCanvasCliente.innerHTML += `<canvas id="pizarra"></canvas>`;
+}
 
 //======================================================================
 // EVENTOS
@@ -104,9 +109,19 @@ miCanvas.addEventListener("mousedown", empezarDibujo, false);
 miCanvas.addEventListener("mousemove", dibujarLinea, false);
 miCanvas.addEventListener("mouseup", pararDibujar, false);
 
-let clean = document.querySelector("#btnClean");
-clean.addEventListener("click", () => {
-  clearCanvas();
+let addFirma = document.querySelector("#firmaTecnico");
+addFirma.addEventListener("click", () => {
+  console.log("canvas", canvasOn);
+  if (canvasOn) {
+    crearCanvas();
+  }
+});
+
+let cancelar = document.querySelector("#btnCancelar");
+cancelar.addEventListener("click", () => {
+  console.log("canvas", canvasOn);
+  miCanvas.remove();
+  canvasOn = true;
 });
 
 // document.getElementById("btnClean").addEventListener("click", limpiar, false);

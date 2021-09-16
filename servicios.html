@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="./styles.css">
+
+    <title>Mis servicios 😺</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <div class="container-fluid sticky-top mb-3">
+        <div class="row shadow p-0 bg-body rounded">
+            <div class="col-md-12 col-sm-12 p-0">
+                <!-- As a heading -->
+                <nav class="navbar navbar-success bg-success">
+                    <div class="container-fluid">
+                        <span class="navbar-brand mb-0 h1 text-light">
+                            <h3>Mis órdenes de trabajo</h3>
+                        </span>
+                        <a href="./index.html" class="btn btn-outline-light">Nuevo Servicio</a>
+                        <!-- <button class="btn btn-outline-light" id="btnRegistrar">Registrar</button> -->
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Cliente</th>
+                            <th scope="col">Problema</th>
+                            <th scope="col">Trabajo realizado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+
+    <!-- custom js -->
+    <script src="./servicios.js" type="module"></script>
+</body>
+
+</html>

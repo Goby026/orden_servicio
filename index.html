@@ -28,7 +28,8 @@
                         <span class="navbar-brand mb-0 h1 text-light">
                             <h3>Orden de trabajo</h3>
                         </span>
-                        <button class="btn btn-outline-light">Registrar</button>
+                        <a href="./servicios.html" class="btn btn-outline-warning">Mis servicios</a>
+                        <button class="btn btn-outline-light" id="btnRegistrar">Registrar</button>
                     </div>
                 </nav>
             </div>
@@ -43,7 +44,7 @@
                     <!-- FECHA -->
                     <div class="mb-3">
                         <label for="fecha" class="form-label">Fecha</label>
-                        <input type="date" class="form-control" id="fecha">
+                        <input type="date" class="form-control" id="fecha" required>
                     </div>
 
                     <!-- CLIENTE -->
@@ -139,13 +140,13 @@
                                         <!-- HORA INICIO -->
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1">Hora Inicio &nbsp;</span>
-                                            <input type="time" class="form-control">
+                                            <input type="time" class="form-control" id="horainicio">
                                         </div>
                                         <!-- HORA FIN -->
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1">Hora Fin
                                                 &nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                            <input type="time" class="form-control">
+                                            <input type="time" class="form-control" id="horafin">
                                         </div>
                                         <!-- DESCRIPCION -->
                                         <div class="input-group mb-3">
@@ -424,7 +425,7 @@
                             <!-- <button class="btn btn-primary" type="button">Button</button>
                             <button class="btn btn-primary" type="button">Button</button> -->
                             <button type="button" class="btn btn-outline-info btn-block" data-bs-toggle="modal"
-                                data-bs-target="#firmaModal">
+                                data-bs-target="#firmaModal" id="firmaTecnico">
                                 Dibujar firma 🤺
                             </button>
                         </div>
@@ -440,7 +441,7 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
-                                    <div class="modal-body">
+                                    <div class="modal-body" id="panel-canvas-cliente">
 
                                         <!-- DIBUJO -->
                                         <!-- <textarea class="form-control p-2" placeholder="" id="comentario"
@@ -451,9 +452,59 @@
 
                                     </div>
                                     <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                            id="btnCancelar">Cancelar</button>
+                                        <button type="button" class="btn btn-primary">Confirmar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ENVIAR ORDEN DE TRABAJO A: -->
+                    <div class="mb-3">
+                        <label class="form-label">Enviar orden de trabajo a:</label>
+                        <input type="email" class="form-control p-2" id="enviarcliente" placeholder="Email del cliente">
+                        <input type="email" class="form-control mt-1 p-2" id="enviarusuario"
+                            placeholder="Email del usuario">
+                    </div>
+
+                    <!-- FIRMA DEL TECNICO -->
+                    <div class="mb-3">
+                        <label for="firmaTecnico" class="form-label">Firma del técnico</label> <br>
+                        <div class="d-grid gap-2">
+                            <!-- <button class="btn btn-primary" type="button">Button</button>
+                            <button class="btn btn-primary" type="button">Button</button> -->
+                            <button type="button" class="btn btn-outline-info btn-block" data-bs-toggle="modal"
+                                data-bs-target="#firmaTecnicoModal">
+                                Dibujar firma 🤺
+                            </button>
+                        </div>
+
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="firmaTecnicoModal" tabindex="-1"
+                            aria-labelledby="firmaTecnicoModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="firmaTecnicoModalLabel">Firma</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <!-- DIBUJO -->
+                                        <!-- <textarea class="form-control p-2" placeholder="" id="comentario"
+                                            style="height: 400px"></textarea> -->
+                                        <canvas id="pizarra2"></canvas>
+
+                                        <div id="image_for_crop"></div>
+
+                                    </div>
+                                    <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Cancelar</button>
-                                        <button type="button" id="btnClean" class="btn btn-warning">Clean</button>
                                         <button type="button" class="btn btn-primary">Confirmar</button>
                                     </div>
                                 </div>
@@ -466,14 +517,13 @@
         </div>
     </div>
 
-
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
 
     <!-- custom js -->
-    <script src="./app.js"></script>
+    <script src="./app.js" type="module"></script>
     <script src="./firma.js"></script>
 </body>
 
