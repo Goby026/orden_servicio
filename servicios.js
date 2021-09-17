@@ -37,6 +37,10 @@ const getAllServices = async () => {
         <td>${doc.data().cliente}</td>
         <td>${doc.data().problema}</td>
         <td>${doc.data().trabajorealizado}</td>
+        <td>${doc.data().responsable}</td>
+        <td><button class="btn btn-info btn-sm">Reporte</button></td>
+        <td><button class="btn btn-warning btn-sm">Editar</button></td>
+        <td><button class="btn btn-danger btn-sm">Eiminar</button></td>
       </tr>
       `;
     });

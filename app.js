@@ -23,28 +23,46 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const service = {
-  fecha: document.getElementById("fecha").value,
-  cliente: document.getElementById("cliente").value,
-  email: document.getElementById("email").value,
-  telefono: document.getElementById("telefono").value,
-  direccion: document.getElementById("direccion").value,
-  modelo: document.getElementById("modelo").value,
-  serie: document.getElementById("serie").value,
-  problema: document.getElementById("problema").value,
-  contador: document.getElementById("contador").value,
-  responsable: document.getElementById("responsable").value,
-  trabajorealizado: document.getElementById("trabajorealizado").value,
-  horainicio: document.getElementById("horainicio").value,
-  horafin: document.getElementById("horafin").value,
+/*=============================================
+= OBTENER LOS CAMPOS DEL FORMULARIO
+===============================================*/
+const setFormValues = () => {
+  return {
+    fecha: document.getElementById("fecha").value,
+    cliente: document.getElementById("cliente").value,
+    email: document.getElementById("email").value,
+    telefono: document.getElementById("telefono").value,
+    direccion: document.getElementById("direccion").value,
+    modelo: document.getElementById("modelo").value,
+    serie: document.getElementById("serie").value,
+    problema: document.getElementById("problema").value,
+    contador: document.getElementById("contador").value,
+    responsable: document.getElementById("responsable").value,
+    trabajorealizado: document.getElementById("trabajorealizado").value,
+    horainicio: document.getElementById("horainicio").value,
+    horafin: document.getElementById("horafin").value,
+  };
+};
+
+/*=============================================
+= VALIDAR CAMPOS DEL FORMULARIO
+===============================================*/
+const validarForm = (service) => {
+  if (service.fecha === "") {
+    alert("Ingrese fecha de atención");
+    return false;
+  }
+
+  return true;
 };
 
 /*=============================================
 = REGISTRAR NUEVO SERVICIO
 ===============================================*/
-const saveServices = async () => {
+const saveServices = async (service) => {
   try {
     const docRef = await addDoc(collection(db, "services"), service);
+    console.log(docRef);
   } catch (e) {
     console.error("Error adding document: ", e);
   }
@@ -64,12 +82,21 @@ const getAllServices = async () => {
   }
 };
 
+/*=============================================
+= INPUTS
+===============================================*/
 const registrar = document.querySelector("#btnRegistrar");
+const formulario = document.querySelector("#orden-form");
 
 registrar.addEventListener("click", () => {
   const result = confirm("¿Registrar servicio?");
   if (result === true) {
-    saveServices();
+    let service = setFormValues();
+
+    if (validarForm(service)) {
+      saveServices(service);
+      formulario.reset();
+    }
   } else {
     console.log("NO REGISTRAR");
   }
