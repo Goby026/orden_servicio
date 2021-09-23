@@ -204,28 +204,28 @@
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1">Cod Repuesto
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" id="codrepuesto">
                                         </div>
                                         <!-- NOMBRE REPUESTO -->
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1">Nombre Repuesto</span>
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" id="nomrepuesto">
                                         </div>
                                         <!-- CANTIDAD -->
                                         <div class="input-group mb-3">
                                             <span class="input-group-text"
                                                 id="basic-addon1">Cantidad&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                            <input type="number" class="form-control">
+                                            <input type="number" class="form-control" id="cantrepuesto">
                                         </div>
 
                                         <!-- REQUERIDO POR -->
                                         <div class="input-group mb-3">
                                             <label for="contador" class="form-label">Requerido
                                                 por:&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                            <select class="form-select">
-                                                <option value="1">Garantía</option>
-                                                <option value="2">Cotización</option>
-                                                <option value="3">Descarte</option>
+                                            <select class="form-select" id="requeridopor">
+                                                <option value="garantia">Garantía</option>
+                                                <option value="cotizacion">Cotización</option>
+                                                <option value="descarte">Descarte</option>
                                             </select>
                                         </div>
                                     </div>
@@ -318,13 +318,11 @@
                                     data-bs-parent="#accordionPozo">
                                     <div class="accordion-body">
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" name="pozo" id="pozosi"
-                                                value="1">
+                                            <input class="form-check-input" type="checkbox" id="pozo" value="1">
                                             <label class="form-check-label" for="pozosi">SI</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" name="pozo" id="pozono"
-                                                value="0">
+                                            <input class="form-check-input" type="checkbox" id="pozo" value="0">
                                             <label class="form-check-label" for="pozono">NO</label>
                                         </div>
                                     </div>
@@ -349,13 +347,11 @@
                                     data-bs-parent="#accordionToner">
                                     <div class="accordion-body">
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" name="toner" id="tonersi"
-                                                value="1">
+                                            <input class="form-check-input" type="checkbox" id="toner" value="SI">
                                             <label class="form-check-label" for="tonersi">SI</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" name="toner" id="tonerno"
-                                                value="0">
+                                            <input class="form-check-input" type="checkbox" id="toner" value="NO">
                                             <label class="form-check-label" for="tonerno">NO</label>
                                         </div>
                                     </div>
@@ -380,13 +376,11 @@
                                     data-bs-parent="#accordionUps">
                                     <div class="accordion-body">
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" name="ups" id="upssi"
-                                                value="1">
+                                            <input class="form-check-input" type="checkbox" id="estups" value="SI">
                                             <label class="form-check-label" for="upssi">SI</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" name="ups" id="upsno"
-                                                value="0">
+                                            <input class="form-check-input" type="checkbox" id="estups" value="NO">
                                             <label class="form-check-label" for="upsno">NO</label>
                                         </div>
                                     </div>
@@ -412,13 +406,13 @@
 
                                         <div class="row">
                                             <div class="col text-center">
-                                                <input class="form-check-input" type="checkbox" name="completado"
-                                                    id="completadosi" value="1">
+                                                <input class="form-check-input" type="checkbox" id="completado"
+                                                    value="SI">
                                                 <label class="form-check-label" for="completadosi">SI</label>
                                             </div>
                                             <div class="col text-center">
-                                                <input class="form-check-input" type="checkbox" name="completado"
-                                                    id="completadono" value="0">
+                                                <input class="form-check-input" type="checkbox" id="completado"
+                                                    value="NO">
                                                 <label class="form-check-label" for="completadono">NO</label>
                                             </div>
                                         </div>
@@ -454,12 +448,7 @@
                                     </div>
                                     <div class="modal-body" id="panel-canvas-cliente">
 
-                                        <!-- DIBUJO -->
-                                        <!-- <textarea class="form-control p-2" placeholder="" id="comentario"
-                                            style="height: 400px"></textarea> -->
                                         <canvas id="pizarra"></canvas>
-
-                                        <div id="image_for_crop"></div>
 
                                     </div>
                                     <div class="modal-footer">
@@ -505,12 +494,7 @@
                                     </div>
                                     <div class="modal-body">
 
-                                        <!-- DIBUJO -->
-                                        <!-- <textarea class="form-control p-2" placeholder="" id="comentario"
-                                            style="height: 400px"></textarea> -->
                                         <canvas id="pizarra2"></canvas>
-
-                                        <div id="image_for_crop"></div>
 
                                     </div>
                                     <div class="modal-footer">

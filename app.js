@@ -41,6 +41,21 @@ const setFormValues = () => {
     trabajorealizado: document.getElementById("trabajorealizado").value,
     horainicio: document.getElementById("horainicio").value,
     horafin: document.getElementById("horafin").value,
+    codrepuesto: document.getElementById("codrepuesto").value,
+    nomrepuesto: document.getElementById("nomrepuesto").value,
+    cantrepuesto: document.getElementById("cantrepuesto").value,
+    requeridopor: document.getElementById("requeridopor").value,
+    recomendaciones: document.getElementById("recomendaciones").value,
+    formFile: document.getElementById("formFile").value,
+    comentario: document.getElementById("comentario").value,
+    pozo: document.getElementById("pozo").value,
+    toner: document.getElementById("toner").value,
+    estups: document.getElementById("estups").value,
+    completado: document.getElementById("completado").value,
+    pizarra: document.getElementById("pizarra").value,
+    enviarcliente: document.getElementById("enviarcliente").value,
+    enviarusuario: document.getElementById("enviarusuario").value,
+    pizarra2: document.getElementById("pizarra2").value,
   };
 };
 
@@ -88,14 +103,18 @@ const getAllServices = async () => {
 const registrar = document.querySelector("#btnRegistrar");
 const formulario = document.querySelector("#orden-form");
 
+/*=============================================
+= EVENTO PARA REGISTRAR ORDEN
+===============================================*/
 registrar.addEventListener("click", () => {
   const result = confirm("¿Registrar servicio?");
   if (result === true) {
     let service = setFormValues();
 
     if (validarForm(service)) {
-      saveServices(service);
-      formulario.reset();
+      // saveServices(service);
+      // formulario.reset();
+      console.log(service);
     }
   } else {
     console.log("NO REGISTRAR");
